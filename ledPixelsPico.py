@@ -62,7 +62,7 @@ class ledPixels:
     def nPixSet(self, nPix):
         print("nPix ledPix:", nPix)
         self.nPix = nPix
-        self.pixels = neopixel.NeoPixel(board.D18, nPix, auto_write=False)
+        self.pixels = neopixel.NeoPixel(self.ledPin, nPix, auto_write=False)
         self.oldColors = []
         for i in range(nPix):
             self.oldColors.append((0,0,0))

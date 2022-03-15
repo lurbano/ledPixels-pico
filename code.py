@@ -1,3 +1,7 @@
- from ledPixels-pico import *
+import board
+from ledPixelsPico import *
 
- print("hi")
+ledPix = ledPixels(6, board.GP0)
+
+ledPix.light(4, (0, 100, 0))
+print("hi")
