@@ -129,6 +129,10 @@ class ledPixels:
         while 1:
             await self.aRainbow_cycle(speed)
 
+    def rainbowForever(self, speed=0.01):
+        while 1:
+            self.rainbow_cycle(speed)
+
     async def aTimer(self, serv, m, s):
         timeLeft = int(m*60 + s)
         totTime = int(m*60 + s)
