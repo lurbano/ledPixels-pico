@@ -19,12 +19,12 @@ Environment Setup:
 
 Interpreter
 * Install an interpreter. I've found it easiest to use [Thonny](https://thonny.org/).
-  * On Linux I've had to run a [https://forum.micropython.org/viewtopic.php?f=21&t=10028](usermod   command) (and restart) to get Thonny to work well with the Pico:
+  * On Linux I've had to run a [usermod command](https://forum.micropython.org/viewtopic.php?f=21&t=10028) (and restart) to get Thonny to work well with the Pico:
 ```
 sudo apt install thonny
 usermod -a -G dialout $USER
 ```
-* Open Thonny and set the interpreter to `circuitpython`. If the code.py file does not automatically open, you should probably open it.
+* Open Thonny and set the interpreter to `circuitpython`. If the `code.py` file does not automatically open, you should probably open it.
 
 Running python programs
 * On the CIRCUITPY drive, there is a file called `code.py` whatever you place in that file will run. So test the LED strip with the following program, which lights up the first and last lights.
@@ -40,6 +40,8 @@ pixels[-1] = (0,20,0)
 
 Learning programming with the Pico and LED strip:
 * [Programming Lessons](https://soriki.com/programmingLessons/leds/)
+  * Note: The examples may be aimed at the Raspberry Pi Zero, but you'll just need to change the board GPIO:
+    * Change `board.D18` to `board.GPO` on line 4 (or so).
 
 
 
