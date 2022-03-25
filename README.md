@@ -19,6 +19,7 @@ Environment Setup:
 
 Interpreter
 * Install an interpreter. I've found it easiest to use [Thonny](https://thonny.org/).
+
 ** On Linux I've had to run a [https://forum.micropython.org/viewtopic.php?f=21&t=10028](usermod   command) (and restart) to get Thonny to work well with the Pico:
 ```
 sudo apt install thonny
