@@ -1,8 +1,7 @@
 import board
-from ledPixelsPico import *
+import neopixel
 
-ledPix = ledPixels(6, board.GP0)
+pixels = neopixel.NeoPixel(board.GP0, 20)
 
-#ledPix.light(4, (0, 100, 0))
-ledPix.rainbowForever()
-print("hi")
+pixels[0] = (20,0,0)
+pixels[-1] = (0,20,0)
