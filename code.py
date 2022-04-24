@@ -1,3 +1,6 @@
+# Goes with programming lessons on: https://soriki.com/pico/
+# Lensyl Urbano
+
 import board
 import neopixel
 
