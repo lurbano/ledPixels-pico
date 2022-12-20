@@ -168,7 +168,7 @@ class ledPixels:
     def setColor(self, col):
         if col[0] == "#":
             col = hex_to_rgb(col)
-        #print("setting color to:", col)
+        print("setting color to:", col)
         self.cancelTask()
         self.brightness = 1.0
         for i in range(self.nPix):
@@ -223,6 +223,17 @@ class ledPixels:
                 self.pixels[i] = self.wheel(pixel_index & 255, 0.5)
             self.pixels.show()
             time.sleep(wait)
+            
+    def rainbowSeq(self, wait=0.1):
+        for t in range(255):
+            pixel_index = (1 * 256 // self.nPix) + t
+            self.setColor(self.wheel(pixel_index & 255, 0.5))
+            time.sleep(wait)
+            
+    def rainbowSeqForever(self, wait=0.1):
+        while True:
+            self.rainbowSeq(wait)
+            
 
     async def aRainbow_cycle(self, wait):
         for j in range(255):
@@ -234,7 +245,7 @@ class ledPixels:
 
 
     def cancelTask(self):
-        #print("Canceling last task.")
+        print("Canceling last task.")
         if self.task:
             self.task.cancel()
 
