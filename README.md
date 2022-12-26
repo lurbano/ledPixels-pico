@@ -47,6 +47,7 @@ Learning programming with the Pico and LED strip:
 
 ## Sensors
 * Potentiometer (analogue): https://github.com/lurbano/picoAnalog
+** Note: There are only three analogue pins (A0, A1, A2) 
 * Temperature (digital) (DS18X20): https://github.com/lurbano/picoT
 
 
