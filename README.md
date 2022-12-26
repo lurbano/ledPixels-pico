@@ -45,6 +45,11 @@ Learning programming with the Pico and LED strip:
     * Change `board.D18` to `board.GPO` on line 4 (or so).
 
 
+## Sensors
+* Potentiometer (analogue): https://github.com/lurbano/picoAnalog
+* Temperature (digital) (DS18X20): https://github.com/lurbano/picoT
+
+
 
 ## References:
 * Adafruit: neopixels on the Pico: https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/neopixel-leds
