@@ -176,6 +176,15 @@ class ledPixels:
         self.pixels.show()
         self.setOldColors()
 
+    def setColorInRange(self, col, rng):
+        if col[0] == "#":
+            col = hex_to_rgb(col)
+        self.brightness = 1.0
+        for i in rng:
+            self.pixels[i] = col
+        self.pixels.show()
+        self.setOldColors()
+
     def setBrightness(self, brightness):
         self.brightness = float(brightness) / 100.0
         b = self.brightness
