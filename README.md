@@ -50,6 +50,10 @@ Learning programming with the Pico and LED strip:
 ** Note: There are only three analogue pins (A0, A1, A2) 
 * Temperature (digital) (DS18X20): https://github.com/lurbano/picoT
 
+## Examples
+* rainbow.py: Runs a rainbow pattern on repeat.
+* timer.py: Very simple timer that switches one led from green to red per second for a given number of seconds (nPix)
+
 ## References:
 * Adafruit: neopixels on the Pico: https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/neopixel-leds
 * lurbano: [rpi-led-strip repository](https://github.com/lurbano/rpi-led-strip)
