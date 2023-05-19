@@ -397,3 +397,17 @@ class ledPixels:
                 #     print(i)
 
             direction *= -1.0
+
+    def twoColorTimer(self, t=5*60, c1 = (0, 200, 0), c2 = (0, 0, 50)):
+        ''' two color timer with time (t) set in seconds'''
+        startTime = time.monotonic()
+        dt = 0
+        self.clear()
+
+        while dt < t:
+            n =  int(dt * self.nPix / t)
+            self.twoColors(n, c2, c1)
+            print(dt, dt/t, n)
+            time.sleep(1)
+            dt = time.monotonic() - startTime
+        self.setColor(c2)
