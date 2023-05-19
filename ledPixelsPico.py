@@ -3,6 +3,7 @@
 import neopixel
 import board
 import time
+import random
 
 import ulab.numpy as np
 
@@ -37,6 +38,16 @@ def strToCol(str): #formatted like '255,0,255'
     b = float(color[2])
     color = (r, g, b)
     return color
+
+def decToBase(decimal, base=2):
+    if decimal == 0:
+        return '0'
+    s = ''
+    while decimal > 0:
+        remainder = decimal % base
+        s = str(remainder) + s
+        decimal //= base
+    return s
 
 class sinFunc:
     def __init__(self, freq=1.0, phase=0.0, offset=0.0, color=(100,0,0), speed=0.1):
@@ -76,6 +87,10 @@ class ledPixels:
     def light(self, n, col):
         self.pixels[n] = col
         self.pixels.show()
+        
+    def lightRange(self, rng, col=(100,0,0)):
+        for i in rng:
+            self.light(i, col)
 
     def show(self):
         self.pixels.show()
@@ -411,3 +426,47 @@ class ledPixels:
             time.sleep(1)
             dt = time.monotonic() - startTime
         self.setColor(c2)
+        
+    def binaryLED(self, t, col=(100,0,0), baseCol = (0,0,50), start_i=0):
+        bTime = str(bin(t))
+        print(t, bTime, len(bTime))
+        n = start_i
+        for i in range(2, len(bTime)):
+            #print(i, bTime[i])
+            if bTime[i] == "1":
+                self.light(n, col)
+            else:
+                self.light(n, baseCol)
+            n += 1
+            
+    def base3LED(self, num, colors=[(100,0,0), (0,100,0), (0,0,100)], start_i=0):
+        '''convert a number to base 3 and show the ternery number using leds'''
+        timeStr = decToBase(num, 3)
+        print(num, timeStr, len(timeStr))
+        n = start_i
+        for s in timeStr:
+            #print(s, bTime[i])
+            self.light(n, colors[int(s)])
+            n += 1
+            
+    def base_n_LED(self, num, base=2, colors=[], start_i=0):
+        '''convert a number to base 3 and show the ternery number using leds'''
+        if len(colors) < base:
+            for i in range(base, len(colors)):
+                colors.append((random.randint(0,255), random.randint(0,255), random.randint(0,255)))
+        timeStr = decToBase(num, base)
+        print(num, timeStr, len(timeStr))
+        n = start_i
+        for s in timeStr:
+            #print(s, bTime[i])
+            self.light(n, colors[int(s)])
+            n += 1
+        
+            
+    def blinkOneLED(self, n = 0, dt=1, color=(100,0,0)):
+        self.light(n, color)
+        time.sleep(dt)
+        self.light(n, (0,0,0))
+        time.sleep(dt)
+        
+
