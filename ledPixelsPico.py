@@ -449,13 +449,15 @@ class ledPixels:
             self.light(n, colors[int(s)])
             n += 1
             
-    def base_n_LED(self, num, base=2, colors=[], start_i=0):
-        '''convert a number to base 3 and show the ternery number using leds'''
+    def base_n_LED(self, num, base=2, colors=[], start_i=0, printOut=False):
+        '''convert a number (num) to any base and show the number using leds
+            if there are less colors than the base then random additional colors are appended'''
         if len(colors) < base:
             for i in range(base, len(colors)):
                 colors.append((random.randint(0,255), random.randint(0,255), random.randint(0,255)))
         timeStr = decToBase(num, base)
-        print(num, timeStr, len(timeStr))
+        if printOut:
+            print(num, timeStr, len(timeStr))
         n = start_i
         for s in timeStr:
             #print(s, bTime[i])
