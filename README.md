@@ -54,6 +54,10 @@ Learning programming with the Pico and LED strip:
 * rainbow.py: Runs a rainbow pattern on repeat.
 * timer.py: Very simple timer that switches one led from green to red per second for a given number of seconds (nPix)
 
+## Output
+* Audio: **Audio**:
+* Reference (adafruit): https://learn.adafruit.com/mp3-playback-rp2040/pico-mp3
+
 ## References:
 * Adafruit: neopixels on the Pico: https://learn.adafruit.com/getting-started-with-raspberry-pi-pico-circuitpython/neopixel-leds
 * lurbano: [rpi-led-strip repository](https://github.com/lurbano/rpi-led-strip)
