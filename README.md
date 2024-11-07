@@ -13,6 +13,7 @@ Hardware:
 ** Ground --> GND
 
 Environment Setup:
+* (NOTE: `setup.sh` script will automatically do this setup.)
 * Connect Pico to computer using USB cable. It should show up as a USB hard drive on your computer named something like RPI-RP2 (you may need to press the BOOTSEL button as you plug it in).
 * Copy the adafruit circuitpython file (`.uf2`) to the RPI-RP2. It should restart and then show up as CIRCUITPY.
 * Copy the `neopixel.mpy` file (original can be found in the [m.x-mpy zip bundle](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/tag/20220323) ) to CIRCUITPY.
